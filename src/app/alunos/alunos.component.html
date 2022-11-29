@@ -1,0 +1,39 @@
+
+<link rel="stylesheet" href="C:\Users\Windows 10\Desktop\projeto angular\Tarefa05WEB\src\app\alunos\style">
+
+<H2>Lista de Alunos</H2>
+
+<table>
+  <tr *ngFor="let aluno of alunos"
+  [class.selected]="aluno==selectedAluno"
+  (click)="onSelect(aluno)">
+    <td> Nome:{{aluno.name}}</td>
+    <td> id:{{aluno.id}}</td>
+    <td> RA:{{aluno.RA}}</td>
+    <td> Turma:{{aluno.turma}}</td>
+  </tr>
+</table>
+
+<div *ngIf="selectedAluno">
+
+<h1>{{selectedAluno.name | uppercase}}</h1>
+<div><span>id:</span>{{selectedAluno.id}}</div>
+<div><span>RA:</span>{{selectedAluno.RA}}</div>
+<div><span>Turma:</span>{{selectedAluno.turma}}</div>
+
+<div>
+  <label for="name">selectedAluno name:</label>
+  <input name="name"[(ngModel)]="selectedAluno.name"placeholder="name" type="text">
+
+  <label for="id"> id do selectedAluno:</label>
+  <input name="id"[(ngModel)]="selectedAluno.id"placeholder="name" type="text">
+
+  <label for="RA"> RA do selectedAluno:</label>
+  <input name="RA"[(ngModel)]="selectedAluno.RA"placeholder="name" type="text">
+
+  <label for="turma"> turma:</label>
+  <input name="RA"[(ngModel)]="selectedAluno.turma"placeholder="name" type="text">
+
+  </div>
+</div>
+
